@@ -1,9 +1,9 @@
 
 ---
 
-# Twitter Trend Analyzer 🐦
+# Twitter Trend Analyzer 
 
-## 📌 Overview
+##  Overview
 The **Twitter Trend Analyzer** is a data engineering and machine learning pipeline designed to:
 - Extract tweets using the Twitter API (via Tweepy)
 - Transform and clean text data for analysis
@@ -13,7 +13,7 @@ The **Twitter Trend Analyzer** is a data engineering and machine learning pipeli
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 ```
 Twitter_Trend_Analyzer/
 │
@@ -45,10 +45,10 @@ Twitter_Trend_Analyzer/
 
 ---
 
-## ⚙️ Installation
+##  Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/Twitter_Trend_Analyzer.git
+   git clone https://github.com/divya-09nimbalkar/Twitter_Trend_Analyzer.git
    cd Twitter_Trend_Analyzer
    ```
 
@@ -66,7 +66,7 @@ Twitter_Trend_Analyzer/
 
 ---
 
-## 🚀 Usage
+##  Usage
 
 ### 1. Prepare Data
 - Place raw tweets in `data/raw/tweets.csv`  
