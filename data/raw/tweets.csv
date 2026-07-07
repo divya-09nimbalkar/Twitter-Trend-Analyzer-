@@ -1,0 +1,30 @@
+date,user,text,sentiment
+2024-01-01,userA,"Love the new product launch! #excited",1
+2024-01-01,userB,"Terrible service at the store today.",0
+2024-01-02,userC,"Just tried the app, works fine.",2
+2024-01-02,userD,"Amazing customer support, thank you!",1
+2024-01-03,userE,"Not happy with the update, too many bugs.",0
+2024-01-03,userF,"Great design and smooth performance.",1
+2024-01-04,userG,"Waiting for the next big announcement.",2
+2024-01-04,userH,"Worst experience ever, uninstalling.",0
+2024-01-05,userI,"This feature is super useful!",1
+2024-01-05,userJ,"Neutral about the changes, nothing major.",2
+2024-01-06,userK,"Absolutely fantastic, exceeded expectations!",1
+2024-01-06,userL,"Disappointed, not what I wanted.",0
+2024-01-07,userM,"Cool update, looks promising.",1
+2024-01-07,userN,"Why did they remove that option?",0
+2024-01-08,userO,"Enjoying the app more every day.",1
+2024-01-08,userP,"Still waiting for bug fixes.",0
+2024-01-09,userQ,"The new UI is okay, nothing special.",2
+2024-01-09,userR,"Best app I’ve used this year!",1
+2024-01-10,userS,"Glitches everywhere, please fix soon.",0
+2024-01-10,userT,"Happy with the improvements so far.",1
+2024-01-11,userU,"Not sure how I feel about the new design.",2
+2024-01-11,userV,"Fantastic update, love it!",1
+2024-01-12,userW,"This is the worst update ever.",0
+2024-01-12,userX,"The app is getting better, keep it up!",1
+2024-01-13,userY,"I have no strong feelings about this.",2
+2024-01-13,userZ,"Terrible, just terrible.",0
+2024-01-14,userAA,"Loving the new features, great job!",1
+2024-01-14,userBB,"Not impressed, expected more.",0
+2024-01-15,userCC,"The app is decent, but could be better.",2
