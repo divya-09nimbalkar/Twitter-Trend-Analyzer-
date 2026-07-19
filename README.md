@@ -48,8 +48,8 @@ Twitter_Trend_Analyzer/
 ##  Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/divya-09nimbalkar/Twitter_Trend_Analyzer.git
-   cd Twitter_Trend_Analyzer
+   git clone https://github.com/divya-09nimbalkar/Twitter-Trend-Analyzer-.git
+   cd Twitter-Trend-Analyzer-
    ```
 
 2. Create a virtual environment:
@@ -71,6 +71,16 @@ Twitter_Trend_Analyzer/
 ### 1. Prepare Data
 - Place raw tweets in `data/raw/tweets.csv`  
 - Or fetch tweets live using the Twitter API in `src/extract.py`
+- Or import a reviewed Xquik export:
+
+```bash
+python -m src.main --xquik-export path/to/xquik-tweets.json
+```
+
+The [Xquik](https://xquik.com) import path accepts saved CSV, JSON, and JSONL
+tweet results. It maps fields such as `text`, `createdAt`, and nested
+`author.username` into the project schema, then classifies them with the
+existing sentiment model.
 
 ### 2. Run ETL Pipeline
 ```bash
@@ -112,3 +122,15 @@ pytest tests/
 
 ---
 
+## Data Schema
+
+Training and dashboard uploads should include tweet text. These columns are
+recognized:
+
+- Text: `text`, `full_text`, `tweet_text`, or `content`
+- Date: `date`, `created_at`, `createdAt`, or `timestamp`
+- User: `user`, `username`, `author_username`, or `screen_name`
+- Sentiment: `sentiment`, `label`, or `predicted_sentiment`
+
+Xquik is an independent third-party service. Not affiliated with X Corp.
+"Twitter" and "X" are trademarks of X Corp.

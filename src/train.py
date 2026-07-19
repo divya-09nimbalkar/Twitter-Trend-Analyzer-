@@ -1,27 +1,42 @@
+from __future__ import annotations
+
 import pandas as pd
 import joblib
+from pathlib import Path
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import LogisticRegression
+from src.transform import transform_tweets
 
-def train_sentiment_model():
-    # Load your sample tweets dataset
-    df = pd.read_csv("data/raw/tweets.csv")
 
-    # Preprocess: just use text + sentiment
-    X_texts = df["text"]
+def train_sentiment_model(
+    df: pd.DataFrame | None = None,
+    data_path: str = "data/raw/tweets.csv",
+    model_path: str = "models/sentiment_model.pkl",
+) -> str:
+    if df is None:
+        df = pd.read_csv(data_path)
+
+    if "sentiment" not in df.columns:
+        raise ValueError("Training data must include a sentiment column.")
+
+    if "clean_text" not in df.columns:
+        df = transform_tweets(df)
+
+    X_texts = df["clean_text"]
     y = df["sentiment"]
 
-    # Convert text to bag-of-words
     vectorizer = CountVectorizer()
     X = vectorizer.fit_transform(X_texts)
 
-    # Train simple logistic regression
     model = LogisticRegression(max_iter=200)
     model.fit(X, y)
 
-    # Save both model + vectorizer
-    joblib.dump((model, vectorizer), "models/sentiment_model.pkl")
-    print("✅ Sentiment model trained and saved at models/sentiment_model.pkl")
+    output = Path(model_path)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    joblib.dump((model, vectorizer), output)
+    return str(output)
+
 
 if __name__ == "__main__":
-    train_sentiment_model()
+    saved_path = train_sentiment_model()
+    print(f"Sentiment model trained and saved at {saved_path}")
